@@ -6,7 +6,7 @@ import PokemonPicture from '@/components/PokemonPicture.vue';
       alt="pokemon"
       class="pokemon-show"
     />
-    <!-- <img :src="pokemonImage" alt="pokemon" class="fade-in"> -->
+    <img v-if="showPokemon" :src="pokemonImage" alt="pokemon" class="fade-in">
   </div>
 </template>
 
@@ -16,6 +16,11 @@ export default {
     pokemonId: {
       type: Number,
       required: true,
+    },
+    showPokemon: {
+      type: Boolean,
+      required: true,
+      default: false,
     },
   },
   computed: {
