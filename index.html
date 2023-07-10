@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js intro</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <!--Vue tendra control absoluto desde myapp -->
+    <div id="myApp">
+        <h1>Quotes <small>{{newQuote}}</small></h1>
+        <!--modificador de eventos-->
+        <input type="text" v-model="newQuote" v-on:keypress.enter="addQuote">
+        <hr>
+        <ul>
+            <!--V-FOR-->
+
+            <!--Desustructuracion con index en v-for-->
+            <li v-for="({quote, author}, index) in quotes">
+                <span><b>{{index + 1}}</b> - {{ quote }} </span>
+                <!--blockquote v-if="author"><b>- {{ author }}</b></blockquote-->
+                <blockquote v-show="author"><b>- {{ author }}</b></blockquote>
+            </li>
+
+            <!--FOr-->
+            <!--<li v-for="quote in quotes">
+                <span>{{ quote.quote }} </span> 
+                <blockquote><b>- {{ quote.author }}</b></blockquote>    
+            </li>-->
+
+            <!--Desustructuracion-->
+            <!--<li v-for="{quote, author} in quotes">
+                <span>{{ quote }} </span> 
+                <blockquote><b>- {{ author }}</b></blockquote>    
+            </li>-->
+        </ul>
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
