@@ -1,7 +1,7 @@
 <template>
   <div class="options-container">
     <ul>
-      <li v-for="pokemon in pokemons" :key="pokemon.id">
+      <li v-for="pokemon in pokemons" :key="pokemon.id" @click="$emit('selection', pokemon.id)">
         {{ pokemon.name }}
       </li>
     </ul>
@@ -19,7 +19,12 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    hola(){
+      // this.$emit() // esto no es necesario
+    },
+    
+  },
 }
 </script>
 
