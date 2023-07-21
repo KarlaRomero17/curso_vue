@@ -29,3 +29,9 @@
     0% {opacity:0;}
     100% {opacity:1;}
   }
+.contarIntentos{
+    justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+
+}
